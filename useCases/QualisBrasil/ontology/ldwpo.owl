@@ -61,6 +61,17 @@
     
 
 
+    <!-- http://ldwpo.aksw.org/terms/1.0/activity -->
+
+    <owl:ObjectProperty rdf:about="http://ldwpo.aksw.org/terms/1.0/activity">
+        <rdfs:label xml:lang="en">activity</rdfs:label>
+        <rdfs:comment xml:lang="en">Object property that points to the Activities of a Process. As restrictions, one Process has one or more Activities and one Activity is related to one or more Processes.</rdfs:comment>
+        <rdfs:range rdf:resource="http://ldwpo.aksw.org/terms/1.0/Activity"/>
+        <rdfs:domain rdf:resource="http://ldwpo.aksw.org/terms/1.0/Process"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://ldwpo.aksw.org/terms/1.0/contributor -->
 
     <owl:ObjectProperty rdf:about="http://ldwpo.aksw.org/terms/1.0/contributor">
@@ -329,17 +340,6 @@ one or more Steps.</rdfs:comment>
 </rdfs:comment>
         <rdfs:domain rdf:resource="http://ldwpo.aksw.org/terms/1.0/LDWorkflowExecution"/>
         <rdfs:range rdf:resource="http://ldwpo.aksw.org/terms/1.0/Report"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://ldwpo.aksw.org/terms/1.0/stage -->
-
-    <owl:ObjectProperty rdf:about="http://ldwpo.aksw.org/terms/1.0/stage">
-        <rdfs:label xml:lang="en">stage</rdfs:label>
-        <rdfs:comment xml:lang="en">Object property that points to the Stages of a Process. As restrictions, one Process has one or more Stages and one Stage is related to one or more Processes.</rdfs:comment>
-        <rdfs:range rdf:resource="http://ldwpo.aksw.org/terms/1.0/Activity"/>
-        <rdfs:domain rdf:resource="http://ldwpo.aksw.org/terms/1.0/Process"/>
     </owl:ObjectProperty>
     
 
@@ -994,7 +994,7 @@ one or more Steps.</rdfs:comment>
     <owl:Class rdf:about="http://ldwpo.aksw.org/terms/1.0/Process">
         <rdfs:label rdf:datatype="&xsd;string">Process</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://ldwpo.aksw.org/terms/1.0/Method"/>
-        <rdfs:comment xml:lang="en">Subclass of Method that represents a concise set of Stages used to maintain an RDFDataset.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Subclass of Method that represents a concise set of Activities used to maintain an RDFDataset.</rdfs:comment>
     </owl:Class>
     
 
@@ -3234,14 +3234,14 @@ one or more Steps.</rdfs:comment>
         <rdf:type rdf:resource="http://ldwpo.aksw.org/terms/1.0/Process"/>
         <name rdf:datatype="&xsd;string">Linked Data Stack</name>
         <description rdf:datatype="&xsd;string">description here</description>
-        <stage rdf:resource="http://ldwpo.aksw.org/terms/1.0/stage_classification_enrichment"/>
-        <stage rdf:resource="http://ldwpo.aksw.org/terms/1.0/stage_evolution_repair"/>
-        <stage rdf:resource="http://ldwpo.aksw.org/terms/1.0/stage_extraction"/>
-        <stage rdf:resource="http://ldwpo.aksw.org/terms/1.0/stage_interlink_fusing"/>
-        <stage rdf:resource="http://ldwpo.aksw.org/terms/1.0/stage_manual_revision_authoring"/>
-        <stage rdf:resource="http://ldwpo.aksw.org/terms/1.0/stage_quality_analysis"/>
-        <stage rdf:resource="http://ldwpo.aksw.org/terms/1.0/stage_searching_browsing_exploration"/>
-        <stage rdf:resource="http://ldwpo.aksw.org/terms/1.0/stage_storage_querying"/>
+        <activity rdf:resource="http://ldwpo.aksw.org/terms/1.0/stage_classification_enrichment"/>
+        <activity rdf:resource="http://ldwpo.aksw.org/terms/1.0/stage_evolution_repair"/>
+        <activity rdf:resource="http://ldwpo.aksw.org/terms/1.0/stage_extraction"/>
+        <activity rdf:resource="http://ldwpo.aksw.org/terms/1.0/stage_interlink_fusing"/>
+        <activity rdf:resource="http://ldwpo.aksw.org/terms/1.0/stage_manual_revision_authoring"/>
+        <activity rdf:resource="http://ldwpo.aksw.org/terms/1.0/stage_quality_analysis"/>
+        <activity rdf:resource="http://ldwpo.aksw.org/terms/1.0/stage_searching_browsing_exploration"/>
+        <activity rdf:resource="http://ldwpo.aksw.org/terms/1.0/stage_storage_querying"/>
     </owl:NamedIndividual>
     
 
@@ -3852,21 +3852,6 @@ one or more Steps.</rdfs:comment>
         <name rdf:datatype="&xsd;string">Virtuoso Sponger</name>
         <rdfs:comment xml:lang="en">instance that represents the Virtuoso Sponger Tool</rdfs:comment>
     </owl:NamedIndividual>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotations
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <rdf:Description rdf:about="http://ldwpo.aksw.org/terms/1.0/fileFormat">
-        <rdfs:label rdf:datatype="&xsd;string">format</rdfs:label>
-        <rdfs:comment xml:lang="en">Object property that points to the Format of a Dataset. As restrictions, one Format is related to one or more Datasets and a Dataset is related to a single Format.</rdfs:comment>
-    </rdf:Description>
 </rdf:RDF>
 
 
